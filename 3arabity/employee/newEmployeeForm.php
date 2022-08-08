@@ -1,3 +1,9 @@
+<?php
+$conn = mysqli_connect('localhost', 'root', '', '3rabity');
+$sql = "SELECT * FROM departments";
+$query = mysqli_query($conn, $sql);
+
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -31,9 +37,14 @@
         <input type="text" placeholder="Email" name="eEmail" required>
         <label>Email</label>
       </div>
-      <div class="user-box">
-        <input type="text" placeholder="Department ID" name="departID" required>
-        <label>Department ID</label>
+      <div class="user-box" style="margin:auto;">
+        <label>Department</label><br><br>
+        <select style="height: 50px; background: transparent; color:white;" name="departID">
+          <option style="color:black;">-- Please Chose Your Department --</option>
+          <?php while ($Department = mysqli_fetch_assoc($query)) { ?>
+            <option style="color:black;" value="<?php echo $Department['id'] ?>"><?php echo $Department['name'] ?></option>
+          <?php } ?>
+        </select>
       </div>
       <div class="user-box">
         <input type="text" placeholder="Basic Salary" name="eSalary" required>

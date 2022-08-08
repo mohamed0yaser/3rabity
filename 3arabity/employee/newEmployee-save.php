@@ -13,5 +13,6 @@ $sql = "INSERT INTO employees(image, name, phone, address, email, department_id,
 VALUES('$image', '$name', '$phone', '$address', '$email', '$department_id', '$basic_salary')";
 
 mysqli_query($conn, $sql);
+header("Location:http://localhost/3rabity/3arabity/employee/employeesList/employeesList.php");
 
  ?>
