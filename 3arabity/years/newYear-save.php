@@ -7,5 +7,4 @@ $sql = "INSERT INTO years (name) VALUES('$year')";
 
 mysqli_query($conn, $sql);
 
-echo "<h1> new Year has been added successfully.</h1>";
- ?>
+header("Location:http://localhost/3rabity/3arabity/years/yearsList/yearsList.php"); ?>

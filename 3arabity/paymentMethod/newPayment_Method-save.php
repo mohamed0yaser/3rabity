@@ -7,5 +7,5 @@ $sql = "INSERT INTO payment_methods (name) VALUES('$payment_method')";
 
 mysqli_query($conn, $sql);
 
-echo "<h1> new Payment_Method has been added successfully.</h1>";
+header("Location:http://localhost/3rabity/3arabity/paymentMethod/payment_methodsList/payment_methodsList.php")
  ?>
