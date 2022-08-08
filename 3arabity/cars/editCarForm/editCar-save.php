@@ -13,5 +13,5 @@ $conn = mysqli_connect('localhost', 'root', '', '3rabity');
 $sql = "UPDATE cars SET image = '$image',model_id='$model_id',color_id='$color_id',plate_number='$plate_number',year_id='$year_id',price_per_hour='$price_per_hour' WHERE id = '$id'";
 
 mysqli_query($conn, $sql);
-
+header("Location:http://localhost/3rabity/3arabity/cars/carsList/carsList.php");
  ?>

@@ -7,5 +7,6 @@ $sql = "INSERT INTO colors (name) VALUES('$color')";
 
 mysqli_query($conn, $sql);
 
-echo "<h1> new Color has been added successfully.</h1>";
- ?>
+
+header("Location:http://localhost/3rabity/3arabity/color/colorsList/colorsList.php") 
+?>

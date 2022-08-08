@@ -25,17 +25,25 @@ $data = mysqli_query($conn, $sql);
       </tr>
       <thead>
       <tbody>
-        <?php while ($color = mysqli_fetch_assoc($data)) { ?>
+        <?php while ($color = mysqli_fetch_assoc($data)) {
+          $id = $color["id"]; ?>
 
           <tr>
             <td><?php echo $color["id"]; ?></td>
             <td><?php echo $color["name"]; ?></td>
             <td><?php echo $color["color_id"]; ?></td>
-            <td><button id="edit"><a style="color:white ;" href="http://localhost/3rabity/3arabity/color/editColorForm/editColorForm.php">Edit</a> </button> <button id="del">Delete</button></td>
+            <td>
+              <button id="edit"><a style="color:white ;" href="http://localhost/3rabity/3arabity/color/editColorForm/editColorForm.php?id=<?php echo $id ?>">Edit</a> </button>
+              <button id="edit"><a style="color:white ;" href="http://localhost/3rabity/3arabity/color/color-delete.php?id=<?php echo $id ?>">Delete</a> </button>
+            </td>
           </tr>
 
         <?php } ?>
-
+        <tr>
+          <td colspan="4">
+            <center><button id="edit" style="width:200px ;"><a href="http://localhost/3rabity/3arabity/color/newColorForm.php" style="color:white ;">Add New Color</a> </button></center>
+          </td>
+        </tr>
 
       </tbody>
 

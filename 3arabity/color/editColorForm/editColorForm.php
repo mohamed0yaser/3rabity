@@ -1,3 +1,10 @@
+<?php
+$id = $_GET['id'];
+$conn = mysqli_connect('localhost', 'root', '', '3rabity');
+$sql = "SELECT * FROM colors WHERE id='$id'";
+$data = mysqli_query($conn, $sql);
+$color = mysqli_fetch_assoc($data);
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -12,15 +19,15 @@
     <form action="editColor-save.php" method="post">
       <h1>Edit Color</h1>
       <div class="user-box">
-        <input type="text" placeholder="ID Color" name="idColor" required>
+        <input type="text" placeholder="ID Color" name="idColor" value="<?php echo $color['id'] ?>" required>
         <label>ID Color</label>
       </div>
       <div class="user-box">
-        <input type="text" placeholder="Enter New Color Name" name="Name" required>
+        <input type="text" placeholder="Enter New Color Name" name="Name" value="<?php echo $color['name'] ?>" required>
         <label>Enter New Color Name</label>
       </div>
       <div class="user-box">
-        <input type="text" placeholder="#Enter New Color Code" name="colorId">
+        <input type="text" placeholder="#Enter New Color Code" name="colorId" value="<?php echo $color['color_id'] ?>">
         <label>#Enter New Color Code</label>
       </div>
       <button type="submit">

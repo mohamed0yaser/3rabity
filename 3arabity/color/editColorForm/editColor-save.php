@@ -10,4 +10,5 @@ $sql = "UPDATE colors SET name = '$name' and color_id ='$code' WHERE id = '$id'"
 mysqli_query($conn, $sql);
 
 
+header("Location:http://localhost/3rabity/3arabity/color/colorsList/colorsList.php")
  ?>
