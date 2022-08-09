@@ -16,9 +16,13 @@ $cust_list = mysqli_query($conn, $sql);
   <meta charset="utf-8">
   <title>Customers</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <script src="../../js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
+  <?php include '../../navbar.php'?>
+  <br>
   <h1>"Customers List"</h1><br><br>
   <table class="customers-table">
     <thead>
@@ -47,13 +51,13 @@ $cust_list = mysqli_query($conn, $sql);
             <td><?php echo $customers["email"] ?></td>
             <td><?php echo $customers["bdate"] ?></td>
             <td><?php
-            $c= $customers["city_id"];
-            $citysql = "SELECT * FROM cities WHERE id ='$c'";
-            $con=mysqli_query($conn,$citysql);
-            $city= mysqli_fetch_assoc($con);
-             echo $city["name"] 
-             
-             ?></td>
+                $c= $customers["city_id"];
+                $citysql = "SELECT * FROM cities WHERE id ='$c'";
+                $con=mysqli_query($conn,$citysql);
+                $city= mysqli_fetch_assoc($con);
+                echo $city["name"]
+
+                ?></td>
             <td><?php echo $customers["id_number"] ?></td>
             <td><button id="edit"><a style="color:white ;" href="http://localhost/3rabity/3arabity/customer/editCustomerForm/editCustomerForm.php?id=<?php echo $id ?>">Edit</a></button>
               <button id="del"><a style="color:white ;" href="http://localhost/3rabity/3arabity/customer/customer-delete.php?id=<?php echo $id ?>">Delete</a></button>
